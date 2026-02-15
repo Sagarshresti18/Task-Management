@@ -1,0 +1,106 @@
+<div class="task-board">
+  <div class="task-column">
+    <div class="column-header todo">
+      <h3>To Do</h3>
+      <span class="count">{{ todoTasks().length }}</span>
+    </div>
+    <div class="task-container">
+      @if (todoTasks().length === 0) {
+        <div class="empty-state">No tasks yet</div>
+      }
+      @for (task of todoTasks(); track task.id) {
+        <div class="task-card" [class]="getPriorityClass(task.priority)">
+          <div class="task-header">
+            <h4>{{ task.title }}</h4>
+            <button class="btn-delete" (click)="onDelete(task.id)">×</button>
+          </div>
+          @if (task.description) {
+            <p class="task-description">{{ task.description }}</p>
+          }
+          <div class="task-meta">
+            <span class="priority-badge">{{ task.priority }}</span>
+            @if (task.dueDate) {
+              <span class="due-date">Due: {{ task.dueDate | date: 'MMM d' }}</span>
+            }
+          </div>
+          <div class="task-actions">
+            <button class="btn-action" (click)="onStatusChange(task.id, TaskStatus.IN_PROGRESS)">
+              Start →
+            </button>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+
+  <div class="task-column">
+    <div class="column-header in-progress">
+      <h3>In Progress</h3>
+      <span class="count">{{ inProgressTasks().length }}</span>
+    </div>
+    <div class="task-container">
+      @if (inProgressTasks().length === 0) {
+        <div class="empty-state">No tasks in progress</div>
+      }
+      @for (task of inProgressTasks(); track task.id) {
+        <div class="task-card" [class]="getPriorityClass(task.priority)">
+          <div class="task-header">
+            <h4>{{ task.title }}</h4>
+            <button class="btn-delete" (click)="onDelete(task.id)">×</button>
+          </div>
+          @if (task.description) {
+            <p class="task-description">{{ task.description }}</p>
+          }
+          <div class="task-meta">
+            <span class="priority-badge">{{ task.priority }}</span>
+            @if (task.dueDate) {
+              <span class="due-date">Due: {{ task.dueDate | date: 'MMM d' }}</span>
+            }
+          </div>
+          <div class="task-actions">
+            <button class="btn-action btn-secondary" (click)="onStatusChange(task.id, TaskStatus.TODO)">
+              ← Back
+            </button>
+            <button class="btn-action" (click)="onStatusChange(task.id, TaskStatus.COMPLETED)">
+              Complete ✓
+            </button>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+
+  <div class="task-column">
+    <div class="column-header completed">
+      <h3>Completed</h3>
+      <span class="count">{{ completedTasks().length }}</span>
+    </div>
+    <div class="task-container">
+      @if (completedTasks().length === 0) {
+        <div class="empty-state">No completed tasks</div>
+      }
+      @for (task of completedTasks(); track task.id) {
+        <div class="task-card completed" [class]="getPriorityClass(task.priority)">
+          <div class="task-header">
+            <h4>{{ task.title }}</h4>
+            <button class="btn-delete" (click)="onDelete(task.id)">×</button>
+          </div>
+          @if (task.description) {
+            <p class="task-description">{{ task.description }}</p>
+          }
+          <div class="task-meta">
+            <span class="priority-badge">{{ task.priority }}</span>
+            @if (task.dueDate) {
+              <span class="due-date">Due: {{ task.dueDate | date: 'MMM d' }}</span>
+            }
+          </div>
+          <div class="task-actions">
+            <button class="btn-action btn-secondary" (click)="onStatusChange(task.id, TaskStatus.IN_PROGRESS)">
+              ← Reopen
+            </button>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>
