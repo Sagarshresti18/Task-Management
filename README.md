@@ -1,59 +1,120 @@
-# Worksphere
+# 🚀 Worksphere – Task Management System
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.4.
+A modern **Task Management Web Application** built with **Angular** and deployed using **Firebase Hosting**.
+Worksphere helps users create, organize, and track tasks efficiently with priority levels and due dates.
 
-## Development server
+🌐 **Live Demo:** https://taskflow-live.web.app
+💻 **GitHub Repo:** https://github.com/Sagarshresti18/Task-Management
 
-To start a local development server, run:
+---
+
+## 📌 Features
+
+* ➕ Add new tasks with title and description
+* 🗓️ Set due dates for tasks
+* ⚡ Assign priority levels (Low / Medium / High)
+* 🎨 Clean and responsive UI
+* 🌍 Deployed live on Firebase Hosting
+
+---
+
+## 🛠️ Tech Stack
+
+* **Frontend:** Angular (TypeScript, HTML, CSS)
+* **Deployment:** Firebase Hosting
+* **Build Tool:** Angular CLI
+
+---
+
+## 📂 Project Structure
+
+```
+Task-Management/
+│── src/                 # Angular source code
+│── public/              # Static assets
+│── angular.json         # Angular configuration
+│── firebase.json        # Firebase hosting config
+│── package.json         # Dependencies
+│── README.md            # Project documentation
+```
+
+---
+
+## ⚙️ Installation & Setup (Run Locally)
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/Sagarshresti18/Task-Management.git
+cd Task-Management
+```
+
+### 2️⃣ Install Dependencies
+
+```bash
+npm install
+```
+
+### 3️⃣ Run Development Server
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Open: `http://localhost:4200`
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🚀 Build for Production
 
 ```bash
-ng generate --help
+ng build --configuration production
 ```
 
-## Building
+---
 
-To build the project run:
+## ☁️ Deployment (Firebase Hosting)
+
+This project is deployed using Firebase Hosting.
 
 ```bash
-ng build
+firebase login
+firebase init hosting
+ng build --configuration production
+firebase deploy
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Live URL after deployment:
+👉 https://taskflow-live.web.app
 
-## Running unit tests
+---
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## 🔮 Future Enhancements
 
-```bash
-ng test
-```
+* 🔐 User Authentication (Firebase Auth)
+* ☁️ Store tasks using Firestore database
+* 🌙 Dark mode support
+* 📊 Task analytics dashboard
+* 🔔 Notifications & reminders
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## 🤝 Contributing
 
-```bash
-ng e2e
-```
+Contributions, issues, and feature requests are welcome!
+Feel free to fork the repo and submit a pull request.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+## 📜 License
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+This project is open-source and available under the MIT License.
+
+---
+
+### 👨‍💻 Author
+
+**R Sagar Shresti**
+
+* GitHub: https://github.com/Sagarshresti18
+* Project: Worksphere Task Management System
